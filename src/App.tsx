@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import profilePic from './assets/img/profile-picture_1.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Button } from "@/components/ui/button"
@@ -13,16 +13,16 @@ import {
     faSquareXTwitter, 
     faSquareGitlab 
 } from '@fortawesome/free-brands-svg-icons'
-import { faUser, faBlog, faCircleHalfStroke, faMugHot } from '@fortawesome/free-solid-svg-icons'
-import {
-  Menubar,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarTrigger,
-} from "@/components/ui/menubar"
+import { faUser, faBlog } from '@fortawesome/free-solid-svg-icons'
+// import {
+//   Menubar,
+//   MenubarContent,
+//   MenubarItem,
+//   MenubarMenu,
+//   MenubarSeparator,
+//   MenubarShortcut,
+//   MenubarTrigger,
+// } from "@/components/ui/menubar"
 import {
   Card,
   CardAction,
