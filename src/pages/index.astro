@@ -2,6 +2,8 @@
 import '../styles/global.css';
 // Component Imports
 import Button from '../components/Button.astro';
+import App from '../pages/App.astro';
+import SideNav from '../pages/SideNav.astro';
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
@@ -17,9 +19,9 @@ import Button from '../components/Button.astro';
 	</head>
 
 	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-		</div>
+        <div class="flex h-screen bg-sidebar" client:load >
+            <SideNav client:load />
+            <App client:load />
+        </div>
 	</body>
 </html>

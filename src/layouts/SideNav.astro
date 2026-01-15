@@ -1,0 +1,31 @@
+---
+import { Label } from "../components/ui/label"
+---
+
+<div id="side-panel" class="flex flex-col items-center w-full overflow-auto max-w-65 bg-sidebar">
+    <div class="flex flex-col items-center py-2 bg-muted-foreground">
+        <slot name="name" />
+        <slot name="username" />
+    </div>
+
+    <slot name="profile-pic" />
+
+    <slot name="intro" />
+
+    <div class="mb-10 text-3xl bg-sidebar-accent">
+        <slot name="socials" />
+    </div>
+
+    <div class="w-4/5 text-md bg-muted-foreground">
+        <slot name="menu" />
+    </div>
+
+    <div class="flex flex-col my-10 bg-sidebar-accent">
+        <slot name="support-me-label" />
+        <slot name="support-me-links" />
+    </div>
+    <div class="flex flex-row items-center space-x-2">
+        <slot name="theme-label" />
+        <slot name="theme-toggle" />
+    </div>
+</div>
