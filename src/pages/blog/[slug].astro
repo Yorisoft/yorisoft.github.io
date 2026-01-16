@@ -1,18 +1,28 @@
 ---
+import MainLayout from '../../layouts/main.astro';
+import Post from "../../layouts/Post.astro"
+import SideNav from "../SideNav.astro"
+
 import { getCollection, getEntry } from "astro:content";
 
 // Required for static builds - tells Astro which pages to generate 
 export async function getStaticPaths() {
     const posts = await getCollection("blog");
-    return posts.map((post) => ({
-    params: { slug: post.id },  // Astro 5.x uses 'id' not 'slug'   
-    })); 
+    return posts.map((post) => {
+        // post.id might be "1.kwin-project-week-1-2/index"
+        // Extract just the folder name
+        const slug = post.id.split('/')[0];  // Astro 5.x uses 'id' not 'slug'
+        console.log(slug);
+        return { 
+            params: { slug },
+            props: { post },  // Pass the post as a prop to avoid fetching again
+        };
+    });
 }
 
 // Get the slug from URL params 
 const { slug } = Astro.params;  // Fetch the entry using Astro 5.x API (not getEntryBySlug) 
-
-const post = await getEntry("blog", slug);  // Handle case where post doesn't exist 
+const { post } = Astro.props;  // Handle case where post doesn't exist 
 
 if (!post) {
     return Astro.redirect("/404"); 
