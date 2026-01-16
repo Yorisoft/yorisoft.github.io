@@ -9,37 +9,35 @@ import {
   CardTitle,
   } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-
-import { getCollection } from "astro:content";
-const posts = await getCollection("blog");
-
-const props = Astro.props;
+const { title, authors, pubDate, description, url } = Astro.props;
 ---
 
-{posts.map(post => (
-    <div class="flex flex-row justify-center gap-4">
-        <img className="flex object-cover aspect-square bg-muted-foreground" src="" alt="Blog Image" />
-        <Card className="flex h-55 bg-card border-border">
-            <CardHeader>
-                <CardTitle>
-                    {post.data.title}
-                </CardTitle>
-                <CardDescription>
-                    {post.data.pubDate}
-                </CardDescription>
-            </CardHeader>
-            <CardContent>
-                <CardDescription>
-                    {post.data.pubDate}
-                </CardDescription>
-            </CardContent>
-            <CardFooter>
-                <CardAction>
-                    <a href={`../content/blog/${post.slug}`} class="">
-                        Read More
-                    </a>
-                </CardAction>
-            </CardFooter>
-        </Card>
-    </div>
-))}
+<div class="flex flex-row bg-muted-foreground gap-4">
+    <img class="flex object-cover aspect-square bg-destructive-foreground" src="" alt="Blog Image" />
+    <Card class="flex h-55 bg-card border-border">
+        <CardHeader>
+            <CardTitle>
+                {title}
+            </CardTitle>
+            <CardDescription>
+                {pubDate}
+            </CardDescription>
+        </CardHeader>
+        <CardContent>
+            <CardDescription>
+                {description ?? ""}
+            </CardDescription>
+            <CardDescription>
+                {authors ?? ""}
+            </CardDescription>
+        </CardContent>
+        <CardFooter>
+            <CardAction>
+                <a href={url} class="text-sm font-medium text-primary hover:underline">
+                    Read More
+                </a>
+                <!-- <Button variant="link" as="a" href={url}>Read More</Button> -->
+            </CardAction>
+        </CardFooter>
+    </Card>
+</div>

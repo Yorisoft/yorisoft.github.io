@@ -1,16 +1,32 @@
 ---
-import Post from "../layouts/Post.astro"
+import Post from '../layouts/Post.astro';
 
-import { render, getEntryBySlug } from "astro:content";
-const post = await getEntryBySlug("blog", Astro.params.slug);
+import { getCollection, getEntry } from "astro:content";
 
-// This is key:
-const { Content } = await post!.render();
+// Required for static builds - tells Astro which pages to generate 
+export async function getStaticPaths() {
+    const posts = await getCollection("blog");
+    return posts.map((post) => ({
+    params: { slug: post.id },  // Astro 5.x uses 'id' not 'slug'   
+    })); 
+}
+
+// Get the slug from URL params 
+const { slug } = Astro.params;  // Fetch the entry using Astro 5.x API (not getEntryBySlug) 
+
+const post = await getEntry("blog", slug);  // Handle case where post doesn't exist 
+
+if (!post) {
+    return Astro.redirect("/404"); 
+}
+
+// Render the markdown content 
+const { Content } = await post.render();
 
 const props = Astro.props;
 const title = props.title;
 ---
 <Post>
-    <p slot="blog-title" htmlFor="title" >{post.data.title}</p>
+    <p slot="blog-title" htmlFor="title" >{post.title}</p>
     <Content slot="blog" />
 </Post>

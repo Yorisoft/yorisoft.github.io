@@ -121,7 +121,7 @@ I took a lot of inspiration from the `buttonrebind_test.cpp`.
 
 It was agreed upon early on that this plugin would be opt-in, giving the user to enable and disable it when they choose. For that I created a KDE Control Module or KCM. Or better put, I built on the existing Game Controller KCM :) I added a new UI element, a toggle, for users to enable and disable the plugin. On the backend, I added a `Q_PROPERTY`, *`pluginEnabled`*, which is responsible for checking the `kwinrc` Plugin configs, and writing to them, in order to manage the state of this plugin. This is what it currently looks like (subject to change):
 
-![game_controller_kcm](images/kwin_plugin_gamepad_kcm.png)
+![game_controller_kcm](/images/kwin_plugin_gamepad_kcm.png)
 
 
 ### Handling Lizard Mode
@@ -140,11 +140,11 @@ Yup. After some testing and the smallest change I've had to make all project the
 
 During my testing, I discovered that Steam Deck shows up on the system as 5 different controllers. Each having their own purpose, one to handle analog input (triggers, trackpads, sticks) another to handle face buttons & D-pad, another for keyboard, etc.. These are used by the system depending on the users needs. Again, this made life a lot easier. This are logs from `evtest` and `gamecontroller` plugin:
 
-![game_controller_steamdeck_testing_0](images/kwin_plugin_gamepad_steamdeck_testing_0.png)
+![game_controller_steamdeck_testing_0](/images/kwin_plugin_gamepad_steamdeck_testing_0.png)
 
-![game_controller_steamdeck_testing_1](images/kwin_plugin_gamepad_steamdeck_testing_1.png)
+![game_controller_steamdeck_testing_1](/images/kwin_plugin_gamepad_steamdeck_testing_1.png)
 
-![game_controller_steamdeck_testing_2](images/kwin_plugin_gamepad_steamdeck_testing_2.png)
+![game_controller_steamdeck_testing_2](/images/kwin_plugin_gamepad_steamdeck_testing_2.png)
 
 
 At the start of this project I had adopted a child. Some of you reading this post might have met my child. It's named ![Bug328987](https://bugs.kde.org/show_bug.cgi?id=328987). It had been drifting inside the KDE community some time, looking for someone to take care of it. But it never happened, and thus time just went on, and on.

@@ -100,10 +100,10 @@ input()->simulateUserActivity();
 Cuando se identifican eventos de entrada específicos de `libevdev`, como `EV_KEY` + `BTN_SOUTH` (presión del botón A) O `EV_KEY` + `BTN_EAST` (presión del botón B), llama a `InputDevice::sendKey()` para **simular presión de tecla de teclado e inyectar las teclas deseadas en el pipeline de entrada de Kwin**. En este caso `Enter` para A (`BTN_SOUTH`) y `Escape` para B (`BTN_EAST`). Para emular ratón/puntero el plugin hace llamadas a `InputDevice::sendPointerButton()` para botones izquierdo y derecho del ratón, y `InputDevice::sendPointerMotionDelta()` para movimiento del puntero.
 Aquí está una lista de todos los mapeos de botones a teclado/ratón:
 
-![architecture_diagram_0](images/kwin_plugin_gamepad_architecture_diagram_0.png) 
-![architecture_diagram_1](images/kwin_plugin_gamepad_architecture_diagram_1.png) 
-![architecture_diagram_2](images/kwin_plugin_gamepad_architecture_diagram_2.png) 
-![architecture_diagram_3](images/kwin_plugin_gamepad_architecture_diagram_3.png) 
+![architecture_diagram_0](/images/kwin_plugin_gamepad_architecture_diagram_0.png) 
+![architecture_diagram_1](/images/kwin_plugin_gamepad_architecture_diagram_1.png) 
+![architecture_diagram_2](/images/kwin_plugin_gamepad_architecture_diagram_2.png) 
+![architecture_diagram_3](/images/kwin_plugin_gamepad_architecture_diagram_3.png) 
 
 ```
 Botones de Cara

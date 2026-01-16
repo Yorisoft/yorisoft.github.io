@@ -107,10 +107,10 @@ input()->simulateUserActivity();
 
 When specific `libevdev` input event are identified, such as `EV_KEY` + `BTN_SOUTH` ( A button press ) OR `EV_KEY` + `BTN_EAST` ( B button press ), it  call `InputDevice::sendKey()` to **simulate keyboard key press and inject the desired keys into KWin input pipeline**. In this case `Enter` for A ( `BTN_SOUTH` ) and `Escape` for B ( `BTN_EAST` ). To emulate mouse/pointer the plugin makes calls to `InputDevice::sendPointerButton()` for left and right mouse buttons, and `InputDevice::sendPointerMotionDelta()` for pointer movement.  
 
-![architecture_diagram_0](images/kwin_plugin_gamepad_architecture_diagram_0.png) 
-![architecture_diagram_1](images/kwin_plugin_gamepad_architecture_diagram_1.png) 
-![architecture_diagram_2](images/kwin_plugin_gamepad_architecture_diagram_2.png) 
-![architecture_diagram_3](images/kwin_plugin_gamepad_architecture_diagram_3.png) 
+![architecture_diagram_0](/images/kwin_plugin_gamepad_architecture_diagram_0.png) 
+![architecture_diagram_1](/images/kwin_plugin_gamepad_architecture_diagram_1.png) 
+![architecture_diagram_2](/images/kwin_plugin_gamepad_architecture_diagram_2.png) 
+![architecture_diagram_3](/images/kwin_plugin_gamepad_architecture_diagram_3.png) 
 
 Here is a list of all the buttons to keyboard/mouse mappings:  
 ```
