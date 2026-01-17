@@ -13,8 +13,8 @@ const { title, authors, pubDate, description, url } = Astro.props;
 ---
 
 <div class="flex flex-row bg-muted-foreground gap-4">
-    <img class="flex object-cover aspect-square bg-destructive-foreground" src="" alt="Blog Image" />
-    <Card class="flex h-55 bg-card border-border">
+    <img class="flex object-cover w-44 h-44 shrink-0 aspect-square bg-destructive-foreground" src="" alt="Blog Image" />
+    <Card class="flex bg-card border-border">
         <CardHeader>
             <CardTitle>
                 {title}

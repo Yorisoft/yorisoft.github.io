@@ -8,8 +8,6 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 SPDX-FileCopyrightText: 2025 Yelsin Sepulveda <yelsin.sepulveda@kdemail.net>
 ---
 
-# KWin GameController Plugin: Weeks 5-6
-
 It's been another few weeks of progress on the KWin GameController Plugin and I've got a lot to share! After spending the previous weeks setting up the foundation, I've progressed things forward by improving the logic a bit more, creating a few integration tests, integrating it into System Settings, and making sure it runs well on real hardware like the steamdeck.
 
 The primary change was splitting up `GameController` into two classes. The new one being `GenericInputDevice` which lives in `emulatedInputDevice.{cpp/h}`. This allowed me to separate the `GameController` logic responsible for emulating keyboard and mouse into it's own separate class. Now `GameController` wrapper class is just responsible for monitoring controller input, resetting idle timer on user activity, and logging.
