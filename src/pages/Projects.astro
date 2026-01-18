@@ -1,0 +1,34 @@
+---
+import Home from "../layouts/Projects.astro"
+import BlogPostCard from "../components/BlogPostCard.astro"
+
+import { Label } from "@/components/ui/label"
+
+import { getCollection } from "astro:content";
+// This looks into src/content/blog/
+const projects = await getCollection('project');
+---
+
+<Home>
+    <pre slot="welcome_msg" class="text-3xl font-semibold">
+<span class="text-blue-500">do</span> {'{'}
+  <span class="text-[#4EC9B0]">Yorisoft</span>::<span class="text-[#DCDCAA]">things</span>();
+{'};'}
+    </pre>
+    {projects.reverse().map((project) => {
+        const pubDate = project.data.date
+          .toISOString()
+          .split("T")[0]; 
+
+          return (
+            <BlogPostCard slot="project-posts" 
+                title={project.data.title}
+                pubDate={pubDate}
+                description={project.data.description}
+                url={`/project/${project.id.split('/')[0]}`}
+                thumbnail={project.data.thumbnail}
+                techList={project.data.techList}
+            />
+          )
+    })}
+</Home>
