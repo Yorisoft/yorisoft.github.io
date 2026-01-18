@@ -1,5 +1,8 @@
 # Contributing
 
+Contributions are welcomed! 
+Concider opening an issue for questions or feature request.  
+  
 ## 📁 Project Structure
 
 ```text
