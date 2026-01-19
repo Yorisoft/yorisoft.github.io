@@ -1,8 +1,9 @@
 # Yorisoft.dev
 
-This repository contains the source for **Yorisoft.dev**, my personal blog and portfolio site.
+This repository contains the source for Yorisoft.dev, my personal blog and portfolio site.
+It’s used for technical blogging, project write-ups, and long-form engineering notes.
 
-The design of this site is inspired by [W3’s free portfolio website](https://www.w3schools.com/howto/howto_website_create_portfolio.asp), which served as an early reference for layout and information hierarchy. From there, the design was adapted and reworked to better support support my needs, such as cheap hosting, SGG, and SEO.
+The design of this site is inspired by [W3’s free portfolio website](https://themes.3rdwavemedia.com/devcard/bs5/index.html), which served as an early reference for layout and information hierarchy. From there, the design was adapted and reworked to better support my needs, such as cheap hosting, SGG, and SEO.
 
 The site is built with **Astro** and **Tailwind CSS**, and is primarily used for technical blogging, project logs, and gaming related escapades.
 
@@ -11,13 +12,17 @@ The site is built with **Astro** and **Tailwind CSS**, and is primarily used for
 ---
 
 ## ✨ Tech Stack
-
-* <img src="https://go-skill-icons.vercel.app/api/icons?i=md" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Written in GitHub style Markdown via `.md` or `.mdx`
-* <img src="https://go-skill-icons.vercel.app/api/icons?i=tailwind" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Tailwind CSS and tailwindprose plugin
-* <img src="https://go-skill-icons.vercel.app/api/icons?i=astro" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Astro 5
-* <img src="https://go-skill-icons.vercel.app/api/icons?i=react" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  React islands components - interactive UI components only where needed
-* <img src="https://go-skill-icons.vercel.app/api/icons?i=shadcn" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Shadcn
-* <img src="https://go-skill-icons.vercel.app/api/icons?i=typescript" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  TypeScript
+### Content & Authoring
+* <img src="https://go-skill-icons.vercel.app/api/icons?i=md" height="18" /> **Markdown / MDX** — Written in GitHub-style Markdown via `.md` or `.mdx`
+### Framework and Rendering
+* <img src="https://go-skill-icons.vercel.app/api/icons?i=astro" height="18" /> **Astro 5** — Static-first framework with partial hydration
+### Styling & UI
+* <img src="https://go-skill-icons.vercel.app/api/icons?i=tailwind" height="18" /> **Tailwind CSS** — Utility-first styling with `@tailwindcss/typography`
+* <img src="https://go-skill-icons.vercel.app/api/icons?i=shadcn" height="18" /> **shadcn/ui** — Reusable, accessible component primitives
+### Interactivity
+* <img src="https://go-skill-icons.vercel.app/api/icons?i=react" height="18" /> **React (Islands)** — Interactive components only where needed
+### Language
+* <img src="https://go-skill-icons.vercel.app/api/icons?i=typescript" height="18" /> **TypeScript** — Type-safe UI and content logic
 
 ---
 
@@ -35,15 +40,14 @@ public/
 └── images/            # Static assets (thumbnails, media)
 ```
 
-* Blog content lives in `src/content/blog/`
-* Static assets are served from `public/`
-* Image assets are served from `public/images`
+* Blog content lives in `src/content/blog/.`
+* Static assets (including images) are served from `public/`
 
 ---
 
 ## 📝 Writing Blog Posts
 
-Blog posts are written in Markdown and managed using **Astro Content Collections**. 
+Blog posts are written in Markdown and validated using Astro Content Collections, which enforce required frontmatter fields at build time. 
 
 ### frontmatter
 
@@ -112,11 +116,7 @@ Once subscribed, new posts will appear automatically in your reader.
 
 ## 🎨 Design Notes
 
-The requirements for my blog are simple:
-
-- Cost efficient hosting
-- Static Site Generation
-- Ability to generate good SEO
+This site prioritizes cost efficiency, static generation, and SEO.
   
 These requirements feed into one another. For cost efficiency, I focused on inexpensive hosting options. At the top of my list were **GitHub Pages (`github.io`)** and **AWS S3**. Both are affordable because they serve **static files directly to the client**—there’s no server-side compute or worker doing runtime rendering.
 
@@ -127,11 +127,6 @@ My website doesn’t currently have the best SEO 😅, which is something I plan
 This is where **Astro** really shines. It meets all of these requirements while remaining simple and flexible to work with.
 
 Check it out: **[https://astro.build](https://astro.build)**
-
----
-## Contribute  
-
-Check [CONTRIBUTING.md](https://github.com/Yorisoft/yorisoft.github.io/blob/main/CONTRIBUTING.md) for info on how to contribute. 
 
 ---
 ## ❤️ Support Me
