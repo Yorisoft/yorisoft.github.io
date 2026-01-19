@@ -8,10 +8,11 @@ description: Implement Game Controller Support in Plasma Desktop
 url: https://invent.kde.org/plasma/kwin
 thumbnail: /images/games.svg
 technologies:
-    - linux
     - cpp
-    - qt
     - cmake
+    - kde
+    - qt
+    - linux
 ---
 
 It's been another few weeks of progress on the KWin GameController Plugin and I've got a lot to share! After spending the previous weeks setting up the foundation, I've progressed things forward by improving the logic a bit more, creating a few integration tests, integrating it into System Settings, and making sure it runs well on real hardware like the steamdeck.
