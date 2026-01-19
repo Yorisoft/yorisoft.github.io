@@ -1,5 +1,5 @@
 ---
-title: "Puppet-Purchase: Auto Purchase Scripts"
+title: "Puppet-Purchase"
 authors:
   -  yorisoft
 date: 2010-01-10
@@ -11,7 +11,9 @@ technologies:
     - nodejs
     - docker
     - jenkins
-    - shell 
+    - bash 
+    - wsl 
+    - chromedevtools
 ---
 
 puppet-purchase is a bot that automates the process of purchasing an item from a few of the major online retailers. In attempt to combat scalping, I've created puppet-purchase bot and am making it publicly available with you all. Not perfect, but has helped me. Please share && contribute.  

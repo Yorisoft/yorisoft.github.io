@@ -1,19 +1,18 @@
 ---
-title: "GSoC'25 KWin Project Blog Post: Week 5-6"
+title: "KWin Plugin"
 discourse: yorisoft
 authors:
   -  yorisoft
 date: 2025-10-03
-description: project description foo
-url: https://foo.co
-thumbnail: /images/kwin_plugin_gamepad_kcm.png
-technologies: 
+description: Implement Game Controller Support in Plasma Desktop
+url: https://invent.kde.org/plasma/kwin
+thumbnail: /images/games.svg
+technologies:
     - cpp
-    - java
-    - go
-    - python 
-    - qt
     - cmake
+    - kde
+    - qt
+    - linux
 ---
 
 It's been another few weeks of progress on the KWin GameController Plugin and I've got a lot to share! After spending the previous weeks setting up the foundation, I've progressed things forward by improving the logic a bit more, creating a few integration tests, integrating it into System Settings, and making sure it runs well on real hardware like the steamdeck.
@@ -45,7 +44,7 @@ void GameController::handleEvdevEvent()
             if (m_usageCount == 0 || isTestEnvironment)
                 m_inputdevice->emulateInputDevice(ev);
 
-.. 
+..
 
 // EmulatedInputDevice
 void EmulatedInputDevice::emulateInputDevice(const input_event &ev)
@@ -159,10 +158,10 @@ As some put it:
 
 > ![timonoj](https://bugs.kde.org/show_bug.cgi?id=328987#c39)
 > Wow this is an ELEVEN (!) year old bug.
-> 
+>
 > ![WS](https://bugs.kde.org/show_bug.cgi?id=328987#c68)
 > This issue is so old it can go to middle school.
-> 
+>
 > and my favorite
 >
 > ![Holmes](https://bugs.kde.org/show_bug.cgi?id=328987#c45)
