@@ -1,0 +1,38 @@
+---
+// import '@fortawesome/fontawesome-svg-core/styles.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { 
+    faSquareLinkedin, 
+    faSquareGithub, 
+    faSquareGitlab 
+} from '@fortawesome/free-brands-svg-icons'
+import { Label } from '@/components/ui/label'
+---
+
+<ul class="p-0 no-bullets" >
+    <li class="flex flex-rows gap-4">
+        <FontAwesomeIcon className="text-[#34d399]" icon={faSquareLinkedin}  />
+        <a class="" href="https://linkedin.com/in/yelsin-sepulveda-lara" target="_blank">
+            <Label > LinkedIn </Label>
+        </a>
+    </li>
+    <li class="flex flex-rows gap-4">
+        <FontAwesomeIcon className="text-[#34d399]" icon={faSquareGithub}  />
+        <a class="" href="https://github.com/yorisoft" target="_blank">
+                <Label > GitHub </Label>
+        </a>
+    </li>
+    <li class="flex flex-rows gap-4">
+        <FontAwesomeIcon className="text-[#34d399]" icon={faSquareGitlab}  />
+        <a class="" href="https://invent.kde/yorisoft" target="_blank">
+                <Label > GitLab </Label>
+        </a>
+    </li>
+    <li class="flex flex-rows gap-4">
+        <FontAwesomeIcon className="text-[#34d399]" icon={faEnvelope}  />
+        <a class="" href="" target="_blank">
+                <Label > yelsinsepulveda@gmail.com </Label>
+        </a>
+    </li>
+</ul>
